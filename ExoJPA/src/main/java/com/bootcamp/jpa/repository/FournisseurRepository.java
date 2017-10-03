@@ -6,29 +6,22 @@
 package com.bootcamp.jpa.repository;
 
 import com.bootcamp.jpa.entites.Fournisseur;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import java.sql.SQLException;
+import java.util.List;
+
+
 
 /**
  *
  * @author Orly
  */
-public class FournisseurRepository {
-    
-    public  static  void main(String[] args) {
+public class FournisseurRepository extends Baserepository<Fournisseur> {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Exo") ;
-
-        EntityManager em = emf.createEntityManager() ;
-        
-        Fournisseur idd=  new   Fournisseur("1") ;
-        Fournisseur nomm =  new   Fournisseur("Berenger") ;
-        
-        em.getTransaction().begin() ;
-        em.persist(idd);
-        em.persist(nomm) ;
-        em.getTransaction().commit() ;
+    public FournisseurRepository(String unitPersistence) {
+        super(unitPersistence, Fournisseur.class);
     }
-    
+
+    public List<Fournisseur> findAll() throws SQLException {
+        return null;
+    }
 }

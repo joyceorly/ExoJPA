@@ -28,6 +28,7 @@ public class Beneficiaire extends Personne {
     @ManyToMany(mappedBy = "beneficiaires")
     private final List<Projet> projets = new ArrayList<Projet>();
 
+
     
     /*public Beneficiaire(String string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

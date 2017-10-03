@@ -5,32 +5,23 @@
  */
 package com.bootcamp.jpa.repository;
 
-import com.bootcamp.jpa.entites.Beneficiaire;
-import com.bootcamp.jpa.entites.Programme;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import com.bootcamp.jpa.entites.Programme_has_Beneficiaire;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
  * @author Orly
  */
-public class ProgramhasbenefRepository {
+
     
-     public  static  void main(String[] args) {
+      public class ProgramhasbenefRepository extends Baserepository<Programme_has_Beneficiaire> {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Exo") ;
-
-        EntityManager em = emf.createEntityManager() ;
-        
-        Programme id=  new  Programme("1") ;
-        Beneficiaire idd ;
-         idd = new   Beneficiaire("1");
-        
-        em.getTransaction().begin() ;
-        em.persist(id);
-        em.persist(idd) ;
-        em.getTransaction().commit() ;
+            public ProgramhasbenefRepository(String unitPersistence) {
+        super(unitPersistence, Programme_has_Beneficiaire.class);
     }
-    
-}
+
+         public List<Programme_has_Beneficiaire> findAll() throws SQLException {
+        return null;
+    }
+    }

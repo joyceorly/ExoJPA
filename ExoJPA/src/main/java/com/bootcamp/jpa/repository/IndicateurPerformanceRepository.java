@@ -6,40 +6,27 @@
 package com.bootcamp.jpa.repository;
 
 import com.bootcamp.jpa.entites.IndicateurPerformance;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
  * @author Orly
  */
-public class IndicateurPerformanceRepository {
+
     
-    public  static  void main(String[] args) {
+   
+          
+      public class IndicateurPerformanceRepository extends Baserepository<IndicateurPerformance> {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Exo") ;
-
-        EntityManager em = emf.createEntityManager() ;
-        
-        IndicateurPerformance id=  new   IndicateurPerformance("1") ;
-        IndicateurPerformance nom =  new   IndicateurPerformance("kaka") ;
-        
-        em.getTransaction().begin() ;
-        em.persist(id);
-        em.persist(nom) ;
-        em.getTransaction().commit() ;
-        
-        
-        
-        /*EntityManager ef = emf.createEntityManager() ;
-
-        IndicateurPerformance nom1 =  new   IndicateurPerformance("koko") ;
-        ef.getTransaction().begin() ;
-        ef.persist(nom1) ;
-        ef.getTransaction().commit() ;*/
-
-        //System.out.println("Id = " + nom.getId()) ;
+            public IndicateurPerformanceRepository(String unitPersistence) {
+        super(unitPersistence, IndicateurPerformance.class);
     }
+
+         public List<IndicateurPerformance> findAll() throws SQLException {
+        return null;
+    }
+    }
+   
+ 
     
-}

@@ -5,7 +5,7 @@
  */
 package com.bootcamp.jpa.repository;
 
-import com.bootcamp.jpa.entites.Livrable;
+import com.bootcamp.jpa.entites.Projet_has_Bailleur;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -13,17 +13,15 @@ import java.util.List;
  *
  * @author Orly
  */    
-       public class LivrableRepository extends Baserepository<Livrable> {
+    public class ProjethasbailleurRepository extends Baserepository<Projet_has_Bailleur> {
 
-            public LivrableRepository(String unitPersistence) {
-        super(unitPersistence, Livrable.class);
+            public ProjethasbailleurRepository(String unitPersistence) {
+        super(unitPersistence, Projet_has_Bailleur.class);
     }
 
-         public List<Livrable> findAll() throws SQLException {
+         public List<Projet_has_Bailleur> findAll() throws SQLException {
         return null;
     }
     }
-    
-   
     
 

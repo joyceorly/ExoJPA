@@ -6,28 +6,23 @@
 package com.bootcamp.jpa.repository;
 
 import com.bootcamp.jpa.entites.Personne;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import java.sql.SQLException;
+import java.util.List;
+
 
 /**
  *
  * @author Orly
  */
-public class PersonneRepository {
-    public  static  void main(String[] args) {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Exo") ;
-
-        EntityManager em = emf.createEntityManager() ;
-        
-        Personne id=  new   Personne("1") ;
-        Personne nom =  new   Personne("Benef") ;
-        
-        em.getTransaction().begin() ;
-        em.persist(id);
-        em.persist(nom) ;
-        em.getTransaction().commit() ;
-    }
     
-}
+    public class PersonneRepository extends Baserepository<Personne> {
+
+    public PersonneRepository(String unitPersistence) {
+        super(unitPersistence, Personne.class);
+    }
+
+    public List<Personne> findAll() throws SQLException {
+        return null;
+    }
+    }

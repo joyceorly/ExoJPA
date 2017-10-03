@@ -5,28 +5,19 @@
  */
 package com.bootcamp.jpa.entites;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
 
 /**
  *
  * @author Orly
  */
 public class Programme_has_Bailleur {
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(name = "tp_programme_bailleur",
-            joinColumns = @JoinColumn(name = "programme_id"),
-            inverseJoinColumns = @JoinColumn(name = "bailleur_id")
-    )
-    private final List<Bailleur> bailleurs = new ArrayList<Bailleur>();
+    @OneToMany
+     public Programme programme;
+     @OneToMany
+     public Bailleur bailleur;
     
-    private String duree;
+    public String duree;
     
 }

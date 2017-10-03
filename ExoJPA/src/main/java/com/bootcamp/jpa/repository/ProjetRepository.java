@@ -6,35 +6,24 @@
 package com.bootcamp.jpa.repository;
 
 import com.bootcamp.jpa.entites.Projet;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
  * @author Orly
  */
-public class ProjetRepository {
+
+        public class ProjetRepository extends Baserepository<Projet> {
+
+            public ProjetRepository(String unitPersistence) {
+        super(unitPersistence, Projet.class);
+    }
+
+         public List<Projet> findAll() throws SQLException {
+        return null;
+    }
+    }
     
-    public  static  void main(String[] args) {
+    
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Exo") ;
-
-        EntityManager em = emf.createEntityManager() ;
-        
-        Projet id=  new   Projet("1") ;
-        Projet nom =  new   Projet("climar") ;
-        Projet programme= new Projet("1");
-        Projet objectif =  new   Projet("savoir le climar") ;
-        Projet ProgrammeindicateurPerformance = new  Projet("1");
-        
-        em.getTransaction().begin() ;
-        em.persist(id);
-        em.persist(nom) ;
-        em.persist(programme) ;
-        em.persist(objectif) ;
-        em.persist(ProgrammeindicateurPerformance) ;
-        em.getTransaction().commit() ;
-        
-    }   
-}

@@ -15,12 +15,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author Orly
  */
-@Entity(name = "tp_bailleur")
+@Entity
+@Table(
+name = "tp_bailleur")
 public class Bailleur extends Personne {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

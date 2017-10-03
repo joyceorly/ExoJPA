@@ -6,38 +6,26 @@
 package com.bootcamp.jpa.repository;
 
 import com.bootcamp.jpa.entites.IndicateurQuantitatif;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import java.sql.SQLException;
+import java.util.List;
+
+
 
 /**
  *
  * @author Orly
  */
-public class IndicateurQuantitatifRepository {
-    
-    public  static  void main(String[] args) {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Exo") ;
+        public class IndicateurQuantitatifRepository extends Baserepository<IndicateurQuantitatif> {
 
-        EntityManager em = emf.createEntityManager() ;
-        
-        IndicateurQuantitatif id=  new   IndicateurQuantitatif("1") ;
-        IndicateurQuantitatif nom =  new   IndicateurQuantitatif("kojo") ;
-        IndicateurQuantitatif propriete=  new   IndicateurQuantitatif("Maison") ;
-        IndicateurQuantitatif valeur =  new   IndicateurQuantitatif("1million") ;
-
-        IndicateurQuantitatif  IndicateurPerformance= new IndicateurQuantitatif("1");
-        
-        em.getTransaction().begin() ;
-        em.persist(id);
-        em.persist(nom) ;
-        em.persist(propriete);
-        em.persist(valeur) ;
-        em.persist(IndicateurPerformance);
-        em.getTransaction().commit() ;
-     
-        
+            public IndicateurQuantitatifRepository(String unitPersistence) {
+        super(unitPersistence, IndicateurQuantitatif.class);
     }
+
+         public List<IndicateurQuantitatif> findAll() throws SQLException {
+        return null;
+    }
+    }
+   
     
-}
+
