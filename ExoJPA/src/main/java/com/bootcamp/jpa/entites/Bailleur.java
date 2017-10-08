@@ -25,6 +25,10 @@ import javax.persistence.Table;
 @Table(
 name = "tp_bailleur")
 public class Bailleur extends Personne {
+
+    public static void setnom(String berenger) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long idd;
@@ -43,4 +47,6 @@ public class Bailleur extends Personne {
     public Bailleur(String string) {
         super(string);
     }
+
+    
 }
